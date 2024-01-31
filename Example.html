@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alert's Demo</title>
+        <style>
+            .centered {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .styled-click-button {
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .inline-explanation {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page-body">
+        
+            <h1>Alert Box Examples</h1>
+            <div class="centered">
+        
+                <input class="styled-click-button" id="alertexamples" type="button" onclick="show_alert()" value="Simple Alert">
+        
+                <p id="alertreturn" data-use-count="0"></p>
+                <p class="inline-explanation" id="alertexplanation"></p>
+        
+            </div>
+
+            <hr>
+            <div class="centered">
+                <input class="styled-click-button" id="confirmexample" type="button" onclick="show_confirm()" value="Confirmation Alert">
+                <br>
+                <p id="confirmreturn" data-use-count="0"></p>
+                <p class="inline-explanation" id="confirmexplanation"></p>
+            </div>
+
+            <hr>
+            <div class="centered">
+                <input class="styled-click-button" id="promptexample" type="button" onclick="show_prompt()" value="Prompt Alert">
+                <p id="promptreturn" data-use-count="0"></p>
+                <p class="inline-explanation" id="promptexplanation"></p>
+            </div>
+        </div>
+
+        <script>
+            function show_alert() {
+                alert("");
+            }
+
+            function show_confirm() {
+                var result = confirm("Do you want to proceed?");
+                document.getElementById("confirmreturn").innerHTML = "You Slected: " + (result ? "OK" : "Cancel");
+            }
+
+            function show_prompt() {
+                var userInput = prompt("Enter something:");
+                document.getElementById("promptreturn").innerHTML = "You typed: " + (userInput ? userInput : "Cancelled");
+            }
+        </script>
+    </body>
+</html>
